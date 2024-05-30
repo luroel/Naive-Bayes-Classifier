@@ -46,3 +46,26 @@ fprintf('La media de cada atributo de la clase Mujeres es:\n')
 MM = mean(M)
 fprintf('Las desvianciones estandar de cada atributo de la clase Mujeres es:\n')
 DE_M = std(M)
+
+%-------------------------------------------------------------------------%
+fprintf('Ingrese los datos para calcular la probalidad en la muestra correspondiente:\n')
+num_datos = n_1;
+
+    for z=1:num_datos  
+         muestra(z)=input('Valores:\n');
+    end
+
+muestra
+P_H = normcdf(muestra,MH,DE_H)
+P_M = normcdf(muestra,MM,DE_M)
+
+%---------------------Probabilidad total de los atributos-----------------%
+SP_H = prod(P_H);
+SP_M = prod(P_M);
+
+PE = (SP_H*PH)+(SP_M*PM)
+
+%-------------------La probabilidad de que sea H/M------------------------%
+fprintf('La probabilidad de que sea Hombre o Mujer en esa muestra es:\n')
+PHNV = 100*(SP_H*PH)/(PE)
+PMNV = 100*(SP_M*PM)/(PE)
