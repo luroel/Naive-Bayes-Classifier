@@ -1,2 +1,2 @@
 # Naive-Bayes-Classifier
-Breve revisión del paradigma de clasificación Bayesiano utilizando Matlab.
+A quick review of the Bayesian classification paradigm.
